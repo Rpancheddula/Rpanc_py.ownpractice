@@ -1,0 +1,26 @@
+#cricket
+
+import random
+
+
+def toss_coin():
+    toss = random.choice(['Heads', 'Tails'])
+    return toss
+
+print("Toss result:", toss_coin())
+
+if toss_coin() == 'Heads':
+    print('India will bat first')
+
+else:
+    print('Australia will bat firt')
+
+ball = 1
+total_score = 0
+while ball <=6*10 :
+    strike = random.randint(1,6)
+    print(strike)
+
+    ball = ball +1
+    if ball == 6:
+        print('End of the over',1)
