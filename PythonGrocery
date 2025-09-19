@@ -1,0 +1,33 @@
+veg = ['Eggplant','Tomato','Potatoes']
+quantity = [20,20,20]
+price = [30,25,30]
+
+#TRANSACTION
+while True:
+    item = input('What do you need: ')
+    print('>>>')
+
+    if item in veg:
+        qty = float(input('How many KGs : '))
+        print('>>>')
+        idx = veg.index(item)
+        if qty <= quantity[idx]:
+            amt = price[idx]*qty
+            print('Subtotal' ,amt)
+            quantity[idx]=quantity[idx]-qty
+        else:
+            print('Out of stock')
+
+    else:
+        print('Sorry',item,'is not available')
+        print('<><><>')
+
+    ch = input('Wanna close the store(Yes/no): ')
+    print('-------------')
+    if ch == 'yes':
+        print('Closing the Store')
+        print('<------>')
+        print('INVENTORY REPORT')
+        for it in zip(veg,quantity):
+            print(it[0],'-',it[1],'KGs')
+        break
