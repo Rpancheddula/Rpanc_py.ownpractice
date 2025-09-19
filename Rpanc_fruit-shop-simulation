@@ -1,0 +1,49 @@
+print('*'*10,'FRUITS SHOP','*'*10)
+print()
+print('I.Apple')
+print('II.Banana')
+print('III.Mango')
+print('IV.Grapes')
+print('V.Orange')
+print()
+cart=[]
+
+while True:
+    print('1.Add to cart')
+    print('2.Remove from cart')
+    print('3.View cart')
+    print('4.Exit')
+    ch = int(input('Choose an option: '))
+    print()
+
+    if ch == 1:
+        fruit = input('Which Fruit: ')
+        if fruit in cart:
+            print(fruit,'Already in cart')
+        else:
+            cart.append(fruit)
+            print(fruit,'Added')
+            print()
+            print('Next')
+            print()
+    elif ch == 2:
+        fruit = input('Which fruit: ')
+        if  fruit in cart:
+            cart.remove(fruit)
+            print(fruit,'Removed from cart')
+            print()
+        else:
+            print(fruit,'Not in cart')
+            print()
+    elif ch == 3:
+        print('*'*5,'CART','*'*5)
+        for f in cart:
+            print(f ,end=' ')
+            print()
+        print('*'*26)
+    elif ch == 4:
+        print('Closing')
+        break
+    else:
+        print('Select valid option')
+    
